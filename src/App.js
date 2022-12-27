@@ -1,11 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Button from './components/button';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import ItemListContainer from "./components/ItemListContainer";
+
 
 function App() {
   return (
     <div className="App">
-      <p>Hola mundo</p>
+      <header className="App-header">
+        <Navbar />
+      </header>
+
+      <main>
+        {<ItemListContainer greeting='Prueba de greating' color='grey'/>}
+      </main>
     </div>
   );
 }
