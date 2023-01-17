@@ -1,18 +1,20 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
-
+import Navbar from "./components/Navbar/Navbar";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <BrowserRouter>
         <Navbar />
-      </header>
-
-      <main>
-        {<ItemListContainer greeting='Prueba de greating' color='grey'/>}
-      </main>
+        <Routes>
+          <Route path="/"element={<ItemListContainer greeting={"Todos nuestros productos"} />}/>
+          <Route path="/detail/:productId"element={<ItemDetailContainer greeting={"Todos nuestros productos"} />}/>
+        </Routes>
+        {/* <Footer/> */}
+      </BrowserRouter>
     </div>
   );
 }
